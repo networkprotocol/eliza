@@ -95,7 +95,7 @@ export class FarcasterPostManager {
             const newContent = await generateText({
                 runtime: this.runtime,
                 context,
-                modelClass: ModelClass.SMALL,
+                modelClass: this.runtime.modelClass,
             });
 
             const slice = newContent.replaceAll(/\\n/g, "\n").trim();

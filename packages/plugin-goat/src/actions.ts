@@ -128,7 +128,7 @@ async function generateParameters(
     const { object } = await generateObject({
         runtime,
         context,
-        modelClass: ModelClass.LARGE,
+        modelClass: runtime.modelClass,
         schema: tool.parameters,
     });
 
@@ -179,6 +179,6 @@ async function generateResponse(
     return generateText({
         runtime,
         context,
-        modelClass: ModelClass.LARGE,
+        modelClass: runtime.modelClass,
     });
 }

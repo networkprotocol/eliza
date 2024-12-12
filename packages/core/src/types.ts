@@ -642,6 +642,9 @@ export type Character = {
     /** Model provider to use */
     modelProvider: ModelProviderName;
 
+    /** Model class to use */
+    modelClass: ModelClass;
+
     /** Image model provider to use, if different from modelProvider */
     imageModelProvider?: ModelProviderName;
 
@@ -1037,6 +1040,7 @@ export interface IAgentRuntime {
 
     fetch?: typeof fetch | null;
 
+    modelClass: ModelClass;
     messageManager: IMemoryManager;
     descriptionManager: IMemoryManager;
     documentsManager: IMemoryManager;

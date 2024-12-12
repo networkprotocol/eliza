@@ -24,4 +24,8 @@ Configuration options for generating objects.
 
 ## Defined in
 
+<<<<<<< HEAD
 [packages/core/src/generation.ts:1265](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1265)
+=======
+[packages/core/src/generation.ts:675](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L675)
+>>>>>>> 6814986b (configurable model class)

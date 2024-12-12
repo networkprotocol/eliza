@@ -135,7 +135,7 @@ export const executeTradeAction: Action = {
             const tradeDetails = await generateObject({
                 runtime,
                 context,
-                modelClass: ModelClass.LARGE,
+                modelClass: runtime.modelClass  ,
                 schema: TradeSchema,
             });
 

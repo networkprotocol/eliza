@@ -568,7 +568,7 @@ export class MessageManager {
             const response = await generateShouldRespond({
                 runtime: this.runtime,
                 context: shouldRespondContext,
-                modelClass: ModelClass.SMALL,
+                modelClass: this.runtime.modelClass,
             });
 
             return response === "RESPOND";
@@ -635,7 +635,7 @@ export class MessageManager {
         const response = await generateMessageResponse({
             runtime: this.runtime,
             context,
-            modelClass: ModelClass.LARGE,
+            modelClass: this.runtime.modelClass,
         });
 
         if (!response) {

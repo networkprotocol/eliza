@@ -22,7 +22,7 @@ Summarization objective: {{objective}}
 
 # Instructions: Summarize the attachments. Return the summary. Do not acknowledge this request, just summarize and continue the existing summary if there is one. Capture any important details based on the objective. Only respond with the new summary text.`;
 
-export const attachmentIdsTemplate = `# Messages we are summarizing 
+export const attachmentIdsTemplate = `# Messages we are summarizing
 {{recentMessages}}
 
 # Instructions: {{senderName}} is requesting a summary of specific attachments. Your goal is to determine their objective, along with the list of attachment IDs to summarize.
@@ -54,7 +54,7 @@ const getAttachmentIds = async (
         const response = await generateText({
             runtime,
             context,
-            modelClass: ModelClass.SMALL,
+            modelClass: runtime.modelClass,
         });
         console.log("response", response);
         // try parsing to a json object
@@ -202,7 +202,7 @@ const summarizeAction = {
         const summary = await generateText({
             runtime,
             context,
-            modelClass: ModelClass.SMALL,
+            modelClass: runtime.modelClass,
         });
 
         currentSummary = currentSummary + "\n" + summary;

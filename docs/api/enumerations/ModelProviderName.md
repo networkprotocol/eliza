@@ -12,7 +12,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:217](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L217)
+=======
+[packages/core/src/types.ts:214](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L214)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -22,7 +26,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:218](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L218)
+=======
+[packages/core/src/types.ts:215](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L215)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -32,7 +40,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:219](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L219)
+=======
+[packages/core/src/types.ts:216](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L216)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -42,7 +54,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:220](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L220)
+=======
+[packages/core/src/types.ts:217](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L217)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -52,7 +68,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:221](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L221)
+=======
+[packages/core/src/types.ts:218](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L218)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -62,7 +82,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:222](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L222)
+=======
+[packages/core/src/types.ts:219](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L219)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -72,7 +96,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:223](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L223)
+=======
+[packages/core/src/types.ts:220](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L220)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -82,7 +110,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:224](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L224)
+=======
+[packages/core/src/types.ts:221](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L221)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -92,7 +124,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:225](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L225)
+=======
+[packages/core/src/types.ts:222](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L222)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -102,7 +138,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:226](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L226)
+=======
+[packages/core/src/types.ts:223](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L223)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -112,7 +152,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:227](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L227)
+=======
+[packages/core/src/types.ts:224](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L224)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -122,7 +166,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:228](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L228)
+=======
+[packages/core/src/types.ts:225](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L225)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -132,7 +180,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:229](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L229)
+=======
+[packages/core/src/types.ts:226](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L226)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -142,7 +194,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:230](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L230)
+=======
+[packages/core/src/types.ts:227](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L227)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -152,7 +208,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:231](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L231)
+=======
+[packages/core/src/types.ts:228](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L228)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -162,7 +222,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:232](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L232)
+=======
+[packages/core/src/types.ts:229](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L229)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -172,7 +236,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:233](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L233)
+=======
+[packages/core/src/types.ts:230](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L230)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -182,7 +250,11 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:234](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L234)
+=======
+[packages/core/src/types.ts:231](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L231)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -192,6 +264,7 @@ Available model providers
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:235](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L235)
 
 ***
@@ -223,3 +296,6 @@ Available model providers
 #### Defined in
 
 [packages/core/src/types.ts:238](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L238)
+=======
+[packages/core/src/types.ts:232](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L232)
+>>>>>>> 6814986b (configurable model class)

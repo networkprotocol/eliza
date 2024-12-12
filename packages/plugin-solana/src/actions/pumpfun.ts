@@ -305,7 +305,7 @@ export default {
         const content = await generateObjectDeprecated({
             runtime,
             context: pumpContext,
-            modelClass: ModelClass.LARGE,
+            modelClass: runtime.modelClass,
         });
 
         // Validate the generated content

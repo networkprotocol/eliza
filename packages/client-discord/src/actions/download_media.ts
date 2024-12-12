@@ -47,7 +47,7 @@ const getMediaUrl = async (
         const response = await generateText({
             runtime,
             context,
-            modelClass: ModelClass.SMALL,
+            modelClass: runtime.modelClass  ,
         });
 
         const parsedResponse = parseJSONObjectFromText(response) as {

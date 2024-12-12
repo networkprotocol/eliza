@@ -113,7 +113,7 @@ export const continueAction: Action = {
 
             const response = await generateTrueOrFalse({
                 context: shouldRespondContext,
-                modelClass: ModelClass.SMALL,
+                modelClass: runtime.modelClass,
                 runtime,
             });
 
@@ -138,7 +138,7 @@ export const continueAction: Action = {
         const response = await generateMessageResponse({
             runtime,
             context,
-            modelClass: ModelClass.LARGE,
+            modelClass: runtime.modelClass,
         });
 
         response.inReplyTo = message.id;

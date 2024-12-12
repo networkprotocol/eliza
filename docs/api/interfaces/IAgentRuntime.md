@@ -12,7 +12,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1019](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1019)
+=======
+[packages/core/src/types.ts:982](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L982)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -22,7 +26,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1020](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1020)
+=======
+[packages/core/src/types.ts:983](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L983)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -32,7 +40,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1021](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1021)
+=======
+[packages/core/src/types.ts:984](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L984)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -42,7 +54,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1022](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1022)
+=======
+[packages/core/src/types.ts:985](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L985)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -52,7 +68,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1023](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1023)
+=======
+[packages/core/src/types.ts:986](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L986)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -62,7 +82,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1024](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1024)
+=======
+[packages/core/src/types.ts:987](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L987)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -72,7 +96,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1025](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1025)
+=======
+[packages/core/src/types.ts:988](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L988)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -82,7 +110,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1026](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1026)
+=======
+[packages/core/src/types.ts:989](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L989)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -92,7 +124,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1027](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1027)
+=======
+[packages/core/src/types.ts:990](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L990)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -102,7 +138,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1028](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1028)
+=======
+[packages/core/src/types.ts:991](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L991)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -112,6 +152,7 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1029](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1029)
 
 ***
@@ -135,6 +176,19 @@ Properties
 #### Defined in
 
 [packages/core/src/types.ts:1031](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1031)
+=======
+[packages/core/src/types.ts:992](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L992)
+
+***
+
+### modelClass
+
+> **modelClass**: [`ModelClass`](../enumerations/ModelClass.md)
+
+#### Defined in
+
+[packages/core/src/types.ts:994](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L994)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -144,7 +198,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1033](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1033)
+=======
+[packages/core/src/types.ts:995](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L995)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -154,7 +212,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1034](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1034)
+=======
+[packages/core/src/types.ts:996](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L996)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -164,7 +226,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1035](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1035)
+=======
+[packages/core/src/types.ts:997](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L997)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -174,7 +240,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1036](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1036)
+=======
+[packages/core/src/types.ts:998](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L998)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -184,7 +254,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1037](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1037)
+=======
+[packages/core/src/types.ts:999](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L999)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -194,7 +268,11 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1039](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1039)
+=======
+[packages/core/src/types.ts:1001](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1001)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -204,6 +282,7 @@ Properties
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1041](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1041)
 
 ***
@@ -218,6 +297,9 @@ but I think the real solution is forthcoming as a base client interface
 #### Defined in
 
 [packages/core/src/types.ts:1044](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1044)
+=======
+[packages/core/src/types.ts:1003](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1003)
+>>>>>>> 6814986b (configurable model class)
 
 ## Methods
 
@@ -231,7 +313,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1046](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1046)
+=======
+[packages/core/src/types.ts:1005](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1005)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -249,7 +335,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1048](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1048)
+=======
+[packages/core/src/types.ts:1007](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1007)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -267,7 +357,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1050](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1050)
+=======
+[packages/core/src/types.ts:1009](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1009)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -289,7 +383,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1052](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1052)
+=======
+[packages/core/src/types.ts:1011](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1011)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -307,7 +405,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1054](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1054)
+=======
+[packages/core/src/types.ts:1013](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1013)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -325,7 +427,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1056](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1056)
+=======
+[packages/core/src/types.ts:1015](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1015)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -341,7 +447,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1059](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1059)
+=======
+[packages/core/src/types.ts:1018](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1018)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -365,7 +475,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1061](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1061)
+=======
+[packages/core/src/types.ts:1020](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1020)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -389,7 +503,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1068](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1068)
+=======
+[packages/core/src/types.ts:1027](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1027)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -409,7 +527,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1075](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1075)
+=======
+[packages/core/src/types.ts:1033](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1033)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -433,7 +555,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1077](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1077)
+=======
+[packages/core/src/types.ts:1035](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1035)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -451,7 +577,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1084](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1084)
+=======
+[packages/core/src/types.ts:1042](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1042)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -477,7 +607,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1086](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1086)
+=======
+[packages/core/src/types.ts:1044](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1044)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -497,7 +631,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1094](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1094)
+=======
+[packages/core/src/types.ts:1052](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1052)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -515,7 +653,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1096](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1096)
+=======
+[packages/core/src/types.ts:1054](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1054)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -535,7 +677,11 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1098](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1098)
+=======
+[packages/core/src/types.ts:1056](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1056)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -553,4 +699,8 @@ Methods
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1103](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1103)
+=======
+[packages/core/src/types.ts:1061](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1061)
+>>>>>>> 6814986b (configurable model class)

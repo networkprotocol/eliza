@@ -121,7 +121,7 @@ export default {
         const content = await generateObjectDeprecated({
             runtime,
             context: transferContext,
-            modelClass: ModelClass.LARGE,
+            modelClass: runtime.modelClass,
         });
 
         // Validate transfer content

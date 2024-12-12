@@ -151,7 +151,7 @@ export const executeCreateToken: Action = {
         const response = await generateObjectDeprecated({
             runtime,
             context: createTokenContext,
-            modelClass: ModelClass.LARGE,
+            modelClass: runtime.modelClass,
         });
 
         const logoPromptContext = composeContext({
@@ -165,7 +165,7 @@ export const executeCreateToken: Action = {
         const logoPrompt = await generateText({
             runtime,
             context: logoPromptContext,
-            modelClass: ModelClass.LARGE,
+            modelClass: runtime.modelClass,
         });
 
         const logo = await generateTokenLogo(logoPrompt, runtime);

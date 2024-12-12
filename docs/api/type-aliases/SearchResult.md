@@ -28,4 +28,8 @@
 
 ## Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1181](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1181)
+=======
+[packages/core/src/types.ts:1125](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1125)
+>>>>>>> 6814986b (configurable model class)

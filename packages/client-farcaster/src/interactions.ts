@@ -199,7 +199,7 @@ export class FarcasterInteractionManager {
         const shouldRespondResponse = await generateShouldRespond({
             runtime: this.runtime,
             context: shouldRespondContext,
-            modelClass: ModelClass.SMALL,
+            modelClass: this.runtime.modelClass,
         });
 
         if (
@@ -224,7 +224,7 @@ export class FarcasterInteractionManager {
         const responseContent = await generateMessageResponse({
             runtime: this.runtime,
             context,
-            modelClass: ModelClass.LARGE,
+            modelClass: this.runtime.modelClass,
         });
 
         responseContent.inReplyTo = memoryId;

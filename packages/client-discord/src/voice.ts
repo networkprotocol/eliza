@@ -832,7 +832,7 @@ export class VoiceManager extends EventEmitter {
         const response = await generateShouldRespond({
             runtime: this.runtime,
             context: shouldRespondContext,
-            modelClass: ModelClass.SMALL,
+            modelClass: this.runtime.modelClass,
         });
 
         if (response === "RESPOND") {
@@ -860,7 +860,7 @@ export class VoiceManager extends EventEmitter {
         const response = await generateMessageResponse({
             runtime: this.runtime,
             context,
-            modelClass: ModelClass.SMALL,
+            modelClass: this.runtime.modelClass,
         });
 
         response.source = "discord";

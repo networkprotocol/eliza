@@ -24,4 +24,8 @@ An object parsed from the JSON string if successful; otherwise, null or the resu
 
 ## Defined in
 
+<<<<<<< HEAD
 [packages/core/src/parsing.ts:110](https://github.com/ai16z/eliza/blob/main/packages/core/src/parsing.ts#L110)
+=======
+[packages/core/src/parsing.ts:103](https://github.com/ai16z/eliza/blob/main/packages/core/src/parsing.ts#L103)
+>>>>>>> 6814986b (configurable model class)

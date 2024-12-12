@@ -92,7 +92,7 @@ async function handler(runtime: IAgentRuntime, message: Memory) {
 
     const shouldProcess = await generateTrueOrFalse({
         context: shouldProcessContext,
-        modelClass: ModelClass.SMALL,
+        modelClass: runtime.modelClass,
         runtime,
     });
 
@@ -125,7 +125,7 @@ async function handler(runtime: IAgentRuntime, message: Memory) {
     const recommendations = await generateObjectArray({
         runtime,
         context,
-        modelClass: ModelClass.LARGE,
+        modelClass: runtime.modelClass,
     });
 
     console.log("recommendations", recommendations);

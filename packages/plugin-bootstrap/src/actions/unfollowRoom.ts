@@ -52,7 +52,7 @@ export const unfollowRoomAction: Action = {
             const response = await generateTrueOrFalse({
                 runtime,
                 context: shouldUnfollowContext,
-                modelClass: ModelClass.LARGE,
+                modelClass: runtime.modelClass,
             });
 
             return response;

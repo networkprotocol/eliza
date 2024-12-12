@@ -140,7 +140,7 @@ export class TwitterSearchClient {
             const mostInterestingTweetResponse = await generateText({
                 runtime: this.runtime,
                 context: prompt,
-                modelClass: ModelClass.SMALL,
+                modelClass: this.runtime.modelClass,
             });
 
             const tweetId = mostInterestingTweetResponse.trim();
@@ -256,7 +256,7 @@ export class TwitterSearchClient {
             const responseContent = await generateMessageResponse({
                 runtime: this.runtime,
                 context,
-                modelClass: ModelClass.LARGE,
+                modelClass: this.runtime.modelClass,
             });
 
             responseContent.inReplyTo = message.id;

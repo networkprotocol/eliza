@@ -66,7 +66,7 @@ export async function generateSummary(
     const response = await generateText({
         runtime,
         context: prompt,
-        modelClass: ModelClass.SMALL,
+        modelClass: runtime.modelClass,
     });
 
     const parsedResponse = parseJSONObjectFromText(response);

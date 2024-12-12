@@ -83,7 +83,11 @@ Custom fetch function to use for making requests.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:209](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L209)
+=======
+[packages/core/src/runtime.ts:210](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L210)
+>>>>>>> 6814986b (configurable model class)
 
 ## Properties
 
@@ -226,6 +230,23 @@ The model to use for generateText.
 #### Defined in
 
 [packages/core/src/runtime.ts:99](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L99)
+<<<<<<< HEAD
+=======
+
+***
+
+### modelClass
+
+> **modelClass**: [`ModelClass`](../enumerations/ModelClass.md)
+
+#### Implementation of
+
+[`IAgentRuntime`](../interfaces/IAgentRuntime.md).[`modelClass`](../interfaces/IAgentRuntime.md#modelClass)
+
+#### Defined in
+
+[packages/core/src/runtime.ts:101](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L101)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -241,7 +262,11 @@ The model to use for generateImage.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:104](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L104)
+=======
+[packages/core/src/runtime.ts:106](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L106)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -270,7 +295,11 @@ Some environments may not have access to the global fetch function and need a cu
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:110](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L110)
+=======
+[packages/core/src/runtime.ts:112](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L112)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -286,7 +315,11 @@ The character to use for the agent
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:115](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L115)
+=======
+[packages/core/src/runtime.ts:117](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L117)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -302,7 +335,11 @@ Store messages that are sent and received by the agent.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:120](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L120)
+=======
+[packages/core/src/runtime.ts:122](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L122)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -318,7 +355,11 @@ Store and recall descriptions of users based on conversations.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:125](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L125)
+=======
+[packages/core/src/runtime.ts:127](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L127)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -334,7 +375,11 @@ Manage the creation and recall of static information (documents, historical game
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:130](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L130)
+=======
+[packages/core/src/runtime.ts:132](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L132)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -350,7 +395,11 @@ Hold large documents that can be referenced
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:135](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L135)
+=======
+[packages/core/src/runtime.ts:137](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L137)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -366,7 +415,11 @@ Searchable document fragments
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:140](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L140)
+=======
+[packages/core/src/runtime.ts:142](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L142)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -380,7 +433,11 @@ Searchable document fragments
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:142](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L142)
+=======
+[packages/core/src/runtime.ts:144](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L144)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -390,7 +447,11 @@ Searchable document fragments
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:143](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L143)
+=======
+[packages/core/src/runtime.ts:145](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L145)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -404,6 +465,7 @@ Searchable document fragments
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:144](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L144)
 
 ***
@@ -422,6 +484,9 @@ but I think the real solution is forthcoming as a base client interface
 #### Defined in
 
 [packages/core/src/runtime.ts:145](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L145)
+=======
+[packages/core/src/runtime.ts:146](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L146)
+>>>>>>> 6814986b (configurable model class)
 
 ## Methods
 
@@ -443,7 +508,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:147](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L147)
+=======
+[packages/core/src/runtime.ts:148](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L148)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -465,7 +534,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:162](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L162)
+=======
+[packages/core/src/runtime.ts:163](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L163)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -491,7 +564,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:166](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L166)
+=======
+[packages/core/src/runtime.ts:167](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L167)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -513,7 +590,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:175](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L175)
+=======
+[packages/core/src/runtime.ts:176](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L176)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -531,6 +612,7 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:376](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L376)
 
 ***
@@ -546,6 +628,9 @@ but I think the real solution is forthcoming as a base client interface
 #### Defined in
 
 [packages/core/src/runtime.ts:409](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L409)
+=======
+[packages/core/src/runtime.ts:377](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L377)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -567,7 +652,11 @@ but I think the real solution is forthcoming as a base client interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:459](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L459)
+=======
+[packages/core/src/runtime.ts:441](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L441)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -589,7 +678,11 @@ The number of recent messages to be kept in memory.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:481](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L481)
+=======
+[packages/core/src/runtime.ts:463](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L463)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -615,7 +708,11 @@ The action to register.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:489](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L489)
+=======
+[packages/core/src/runtime.ts:471](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L471)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -637,7 +734,11 @@ The evaluator to register.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:498](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L498)
+=======
+[packages/core/src/runtime.ts:480](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L480)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -659,7 +760,11 @@ The context provider to register.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:506](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L506)
+=======
+[packages/core/src/runtime.ts:488](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L488)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -691,7 +796,11 @@ The message to process.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:515](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L515)
+=======
+[packages/core/src/runtime.ts:497](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L497)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -731,7 +840,11 @@ The results of the evaluation.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:599](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L599)
+=======
+[packages/core/src/runtime.ts:574](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L574)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -763,7 +876,11 @@ An error if the participant cannot be added.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:666](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L666)
+=======
+[packages/core/src/runtime.ts:644](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L644)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -799,7 +916,11 @@ The user name to ensure the existence of.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:682](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L682)
+=======
+[packages/core/src/runtime.ts:660](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L660)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -823,7 +944,11 @@ The user name to ensure the existence of.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:702](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L702)
+=======
+[packages/core/src/runtime.ts:680](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L680)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -853,7 +978,11 @@ The user name to ensure the existence of.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:719](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L719)
+=======
+[packages/core/src/runtime.ts:697](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L697)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -884,7 +1013,11 @@ An error if the room cannot be created.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:755](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L755)
+=======
+[packages/core/src/runtime.ts:733](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L733)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -914,7 +1047,11 @@ The state of the agent.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:768](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L768)
+=======
+[packages/core/src/runtime.ts:746](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L746)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -936,4 +1073,8 @@ The state of the agent.
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/runtime.ts:1214](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L1214)
+=======
+[packages/core/src/runtime.ts:1192](https://github.com/ai16z/eliza/blob/main/packages/core/src/runtime.ts#L1192)
+>>>>>>> 6814986b (configurable model class)

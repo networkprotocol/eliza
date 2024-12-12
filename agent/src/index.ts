@@ -7,6 +7,26 @@ import { LensAgentClient } from "@ai16z/client-lens";
 import { SlackClientInterface } from "@ai16z/client-slack";
 import { TelegramClientInterface } from "@ai16z/client-telegram";
 import { TwitterClientInterface } from "@ai16z/client-twitter";
+import { FarcasterAgentClient } from "@ai16z/client-farcaster";
+// import {
+//     AgentRuntime,
+//     CacheManager,
+//     Character,
+//     Clients,
+//     DbCacheAdapter,
+//     FsCacheAdapter,
+//     IAgentRuntime,
+//     ICacheManager,
+//     IDatabaseAdapter,
+//     IDatabaseCacheAdapter,
+//     ModelProviderName,
+//     defaultCharacter,
+//     elizaLogger,
+//     settings,
+//     stringToUuid,
+//     validateCharacterConfig,
+// } from "@ai16z/eliza";
+
 import {
     AgentRuntime,
     CacheManager,
@@ -24,7 +44,8 @@ import {
     settings,
     stringToUuid,
     validateCharacterConfig,
-} from "@ai16z/eliza";
+} from "../../packages/core/src/index.ts";
+
 import { zgPlugin } from "@ai16z/plugin-0g";
 import { bootstrapPlugin } from "@ai16z/plugin-bootstrap";
 import createGoatPlugin from "@ai16z/plugin-goat";

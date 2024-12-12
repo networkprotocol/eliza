@@ -24,7 +24,11 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1009](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1009)
+=======
+[packages/core/src/types.ts:972](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L972)
+>>>>>>> 6814986b (configurable model class)
 
 ## Methods
 
@@ -48,7 +52,11 @@ Add abstract initialize method that must be implemented by derived classes
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1014](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1014)
+=======
+[packages/core/src/types.ts:977](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L977)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -66,7 +74,11 @@ Add abstract initialize method that must be implemented by derived classes
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1122](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1122)
+=======
+[packages/core/src/types.ts:1080](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1080)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -84,7 +96,11 @@ Add abstract initialize method that must be implemented by derived classes
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1123](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1123)
+=======
+[packages/core/src/types.ts:1081](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1081)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -102,7 +118,11 @@ Add abstract initialize method that must be implemented by derived classes
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1124](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1124)
+=======
+[packages/core/src/types.ts:1082](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1082)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -122,4 +142,8 @@ Add abstract initialize method that must be implemented by derived classes
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1125](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1125)
+=======
+[packages/core/src/types.ts:1083](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1083)
+>>>>>>> 6814986b (configurable model class)

@@ -201,7 +201,7 @@ export const executeSwap: Action = {
         const response = await generateObjectDeprecated({
             runtime,
             context: swapContext,
-            modelClass: ModelClass.LARGE,
+            modelClass: runtime.modelClass,
         });
 
         console.log("Response:", response);

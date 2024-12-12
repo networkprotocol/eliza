@@ -64,7 +64,7 @@ async function handler(runtime: IAgentRuntime, message: Memory) {
     const facts = await generateObjectArray({
         runtime,
         context,
-        modelClass: ModelClass.LARGE,
+        modelClass: runtime.modelClass,
     });
 
     const factsManager = new MemoryManager({

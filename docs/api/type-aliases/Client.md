@@ -38,4 +38,8 @@ Stop client connection
 
 ## Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:572](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L572)
+=======
+[packages/core/src/types.ts:563](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L563)
+>>>>>>> 6814986b (configurable model class)

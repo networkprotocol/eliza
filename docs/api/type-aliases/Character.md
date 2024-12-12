@@ -38,6 +38,12 @@ Optional system prompt
 
 Model provider to use
 
+### modelClass
+
+> **modelClass**: [`ModelClass`](../enumerations/ModelClass.md)
+
+Model class to use
+
 ### imageModelProvider?
 
 > `optional` **imageModelProvider**: [`ModelProviderName`](../enumerations/ModelProviderName.md)
@@ -424,4 +430,8 @@ Optional NFT prompt
 
 ## Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:627](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L627)
+=======
+[packages/core/src/types.ts:610](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L610)
+>>>>>>> 6814986b (configurable model class)

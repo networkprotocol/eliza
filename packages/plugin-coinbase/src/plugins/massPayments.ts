@@ -269,7 +269,7 @@ export const sendMassPayoutAction: Action = {
             const transferDetails = await generateObject({
                 runtime,
                 context,
-                modelClass: ModelClass.LARGE,
+                modelClass: runtime.modelClass,
                 schema: TransferSchema,
             });
 

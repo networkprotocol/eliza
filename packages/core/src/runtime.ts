@@ -98,6 +98,8 @@ export class AgentRuntime implements IAgentRuntime {
      */
     modelProvider: ModelProviderName;
 
+    modelClass: ModelClass;
+
     /**
      * The model to use for generateImage.
      */
@@ -241,7 +243,7 @@ export class AgentRuntime implements IAgentRuntime {
             opts?.agentId ??
             stringToUuid(opts.character?.name ?? uuidv4());
         this.character = opts.character || defaultCharacter;
-
+        this.modelClass = opts.character?.modelClass || ModelClass.LARGE;
         // By convention, we create a user and room using the agent id.
         // Memories related to it are considered global context for the agent.
         this.ensureRoomExists(this.agentId);
@@ -641,7 +643,7 @@ export class AgentRuntime implements IAgentRuntime {
         const result = await generateText({
             runtime: this,
             context,
-            modelClass: ModelClass.SMALL,
+            modelClass: this.modelClass,
         });
 
         const evaluators = parseJsonArrayFromText(

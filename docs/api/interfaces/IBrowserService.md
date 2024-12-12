@@ -24,7 +24,11 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1009](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1009)
+=======
+[packages/core/src/types.ts:972](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L972)
+>>>>>>> 6814986b (configurable model class)
 
 ## Methods
 
@@ -48,7 +52,11 @@ Add abstract initialize method that must be implemented by derived classes
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1014](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1014)
+=======
+[packages/core/src/types.ts:977](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L977)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -62,7 +70,11 @@ Add abstract initialize method that must be implemented by derived classes
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1150](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1150)
+=======
+[packages/core/src/types.ts:1108](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1108)
+>>>>>>> 6814986b (configurable model class)
 
 ***
 
@@ -94,4 +106,8 @@ Add abstract initialize method that must be implemented by derived classes
 
 #### Defined in
 
+<<<<<<< HEAD
 [packages/core/src/types.ts:1151](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1151)
+=======
+[packages/core/src/types.ts:1109](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L1109)
+>>>>>>> 6814986b (configurable model class)

@@ -1,4 +1,4 @@
-import { Character, ModelProviderName } from "./types.ts";
+import { Character, ModelClass, ModelProviderName } from "./types.ts";
 
 export const defaultCharacter: Character = {
     name: "Eliza",
@@ -6,6 +6,7 @@ export const defaultCharacter: Character = {
     plugins: [],
     clients: [],
     modelProvider: ModelProviderName.LLAMALOCAL,
+    modelClass: ModelClass.SMALL,
     settings: {
         secrets: {},
         voice: {
