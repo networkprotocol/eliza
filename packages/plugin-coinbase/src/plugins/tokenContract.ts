@@ -95,7 +95,7 @@ export const deployTokenContractAction: Action = {
             const contractDetails = await generateObjectV2({
                 runtime,
                 context,
-                modelClass: ModelClass.SMALL,
+                modelClass: runtime.modelClass,
                 schema: TokenContractSchema,
             });
             elizaLogger.log("Contract details:", contractDetails.object);
@@ -306,7 +306,7 @@ export const invokeContractAction: Action = {
             const invocationDetails = await generateObjectV2({
                 runtime,
                 context,
-                modelClass: ModelClass.LARGE,
+                modelClass: runtime.modelClass  ,
                 schema: ContractInvocationSchema,
             });
             elizaLogger.log("Invocation details:", invocationDetails.object);

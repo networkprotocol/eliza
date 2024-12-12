@@ -67,7 +67,7 @@ export const followRoomAction: Action = {
             const response = await generateTrueOrFalse({
                 runtime,
                 context: shouldFollowContext,
-                modelClass: ModelClass.LARGE,
+                modelClass: runtime.modelClass,
             });
 
             return response;

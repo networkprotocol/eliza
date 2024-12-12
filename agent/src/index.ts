@@ -6,6 +6,25 @@ import { DiscordClientInterface } from "@ai16z/client-discord";
 import { TelegramClientInterface } from "@ai16z/client-telegram";
 import { TwitterClientInterface } from "@ai16z/client-twitter";
 import { FarcasterAgentClient } from "@ai16z/client-farcaster";
+// import {
+//     AgentRuntime,
+//     CacheManager,
+//     Character,
+//     Clients,
+//     DbCacheAdapter,
+//     FsCacheAdapter,
+//     IAgentRuntime,
+//     ICacheManager,
+//     IDatabaseAdapter,
+//     IDatabaseCacheAdapter,
+//     ModelProviderName,
+//     defaultCharacter,
+//     elizaLogger,
+//     settings,
+//     stringToUuid,
+//     validateCharacterConfig,
+// } from "@ai16z/eliza";
+
 import {
     AgentRuntime,
     CacheManager,
@@ -23,7 +42,8 @@ import {
     settings,
     stringToUuid,
     validateCharacterConfig,
-} from "@ai16z/eliza";
+} from "../../packages/core/src/index.ts";
+
 import { zgPlugin } from "@ai16z/plugin-0g";
 import { goatPlugin } from "@ai16z/plugin-goat";
 import { bootstrapPlugin } from "@ai16z/plugin-bootstrap";

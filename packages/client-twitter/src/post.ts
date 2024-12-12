@@ -162,7 +162,7 @@ export class TwitterPostClient {
             const newTweetContent = await generateText({
                 runtime: this.runtime,
                 context,
-                modelClass: ModelClass.SMALL,
+                modelClass: this.runtime.modelClass,
             });
 
             // Replace \n with proper line breaks and trim excess spaces

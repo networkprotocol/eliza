@@ -97,7 +97,7 @@ export const transfer: Action = {
         const content = await generateObjectV2({
             runtime,
             context,
-            modelClass: ModelClass.SMALL,
+            modelClass: runtime.modelClass,
             schema: TransferSchema,
         });
 

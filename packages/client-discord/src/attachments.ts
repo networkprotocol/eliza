@@ -22,11 +22,11 @@ async function generateSummary(
     text = trimTokens(text, 100000, "gpt-4o-mini"); // TODO: clean this up
 
     const prompt = `Please generate a concise summary for the following text:
-  
+
   Text: """
   ${text}
   """
-  
+
   Respond with a JSON object in the following format:
   \`\`\`json
   {
@@ -38,7 +38,7 @@ async function generateSummary(
     const response = await generateText({
         runtime,
         context: prompt,
-        modelClass: ModelClass.SMALL,
+        modelClass: ModelClass.modelClass,
     });
 
     const parsedResponse = parseJSONObjectFromText(response);

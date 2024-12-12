@@ -1,4 +1,4 @@
-[@ai16z/eliza v0.1.5-alpha.3](../index.md) / Character
+[@ai16z/eliza v0.1.5-alpha.5](../index.md) / Character
 
 # Type Alias: Character
 
@@ -37,6 +37,12 @@ Optional system prompt
 > **modelProvider**: [`ModelProviderName`](../enumerations/ModelProviderName.md)
 
 Model provider to use
+
+### modelClass
+
+> **modelClass**: [`ModelClass`](../enumerations/ModelClass.md)
+
+Model class to use
 
 ### imageModelProvider?
 
@@ -342,4 +348,4 @@ Optional Twitter profile
 
 ## Defined in
 
-[packages/core/src/types.ts:609](https://github.com/monilpat/eliza/blob/main/packages/core/src/types.ts#L609)
+[packages/core/src/types.ts:610](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L610)

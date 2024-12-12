@@ -187,7 +187,7 @@ export const confiPump: Action = {
         const content = await generateObjectV2({
             runtime,
             context,
-            modelClass: ModelClass.LARGE,
+            modelClass: runtime.modelClass,
             schema: PumpSchema,
         });
 

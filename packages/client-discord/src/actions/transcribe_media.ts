@@ -47,7 +47,7 @@ const getMediaAttachmentId = async (
         const response = await generateText({
             runtime,
             context,
-            modelClass: ModelClass.SMALL,
+            modelClass: runtime.modelClass,
         });
         console.log("response", response);
 

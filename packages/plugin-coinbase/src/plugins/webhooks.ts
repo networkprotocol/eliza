@@ -95,7 +95,7 @@ export const createWebhookAction: Action = {
             const webhookDetails = await generateObjectV2({
                 runtime,
                 context,
-                modelClass: ModelClass.SMALL,
+                modelClass: runtime.modelClass,
                 schema: WebhookSchema,
             });
 

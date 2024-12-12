@@ -122,7 +122,7 @@ export default {
         const content = await generateObject({
             runtime,
             context: transferContext,
-            modelClass: ModelClass.LARGE,
+            modelClass: runtime.modelClass,
         });
 
         // Validate transfer content

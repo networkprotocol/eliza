@@ -59,7 +59,7 @@ const getDateRange = async (
         const response = await generateText({
             runtime,
             context,
-            modelClass: ModelClass.SMALL,
+            modelClass: runtime.modelClass,
         });
         console.log("response", response);
         // try parsing to a json object
@@ -274,7 +274,7 @@ const summarizeAction = {
             const summary = await generateText({
                 runtime,
                 context,
-                modelClass: ModelClass.SMALL,
+                modelClass: runtime.modelClass  ,
             });
 
             currentSummary = currentSummary + "\n" + summary;
