@@ -7,26 +7,6 @@ import { LensAgentClient } from "@ai16z/client-lens";
 import { SlackClientInterface } from "@ai16z/client-slack";
 import { TelegramClientInterface } from "@ai16z/client-telegram";
 import { TwitterClientInterface } from "@ai16z/client-twitter";
-import { FarcasterAgentClient } from "@ai16z/client-farcaster";
-// import {
-//     AgentRuntime,
-//     CacheManager,
-//     Character,
-//     Clients,
-//     DbCacheAdapter,
-//     FsCacheAdapter,
-//     IAgentRuntime,
-//     ICacheManager,
-//     IDatabaseAdapter,
-//     IDatabaseCacheAdapter,
-//     ModelProviderName,
-//     defaultCharacter,
-//     elizaLogger,
-//     settings,
-//     stringToUuid,
-//     validateCharacterConfig,
-// } from "@ai16z/eliza";
-
 import {
     AgentRuntime,
     CacheManager,
@@ -40,16 +20,16 @@ import {
     ICacheManager,
     IDatabaseAdapter,
     IDatabaseCacheAdapter,
+    initModels,
     ModelProviderName,
     settings,
     stringToUuid,
     validateCharacterConfig,
-} from "../../packages/core/src/index.ts";
+} from "@ai16z/eliza";
 
 import { zgPlugin } from "@ai16z/plugin-0g";
 import { bootstrapPlugin } from "@ai16z/plugin-bootstrap";
 import createGoatPlugin from "@ai16z/plugin-goat";
-// import { intifacePlugin } from "@ai16z/plugin-intiface";
 import { DirectClient } from "@ai16z/client-direct";
 import { aptosPlugin } from "@ai16z/plugin-aptos";
 import {
@@ -623,6 +603,7 @@ async function startAgent(
 
         // start services/plugins/process knowledge
         await runtime.initialize();
+        initModels(runtime);
 
         // start assigned clients
         runtime.clients = await initializeClients(character, runtime);

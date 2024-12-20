@@ -1,16 +1,42 @@
+import elizaLogger from "./logger.ts";
 import settings from "./settings.ts";
-import { Models, ModelProviderName, ModelClass } from "./types.ts";
+import { Models, ModelProviderName, ModelClass, IAgentRuntime } from "./types.ts";
 
-export const models: Models = {
-    [ModelProviderName.OPENAI]: {
-        endpoint: "https://api.openai.com/v1",
-        settings: {
+ export let models: Models;
+
+export function initModels(runtime: IAgentRuntime) {
+
+            const maxInputTokens  = parseInt(runtime.getSetting("MAX_INPUT_TOKENS") );
+            const maxOutputTokens  = parseInt(runtime.getSetting("MAX_OUTPUT_TOKENS") );
+            const frequencyPenalty  = parseFloat(runtime.getSetting("FREQUENCY_PENALTY") );
+            const presencePenalty  = parseFloat(runtime.getSetting("PRESENCE_PENALTY") );
+            const temperature  = parseFloat(runtime.getSetting("TEMPERATURE") );
+            const repetitionPenalty  = parseFloat(runtime.getSetting("REPETITION_PENALTY") );
+
+            elizaLogger.info();
+            elizaLogger.info();
+            elizaLogger.info();
+            elizaLogger.info("maxInputTokens", maxInputTokens);
+            elizaLogger.info("maxOutputTokens", maxOutputTokens);
+            elizaLogger.info("frequencyPenalty", frequencyPenalty);
+            elizaLogger.info("presencePenalty", presencePenalty);
+            elizaLogger.info("temperature", temperature);
+            elizaLogger.info("repetitionPenalty", repetitionPenalty);
+            elizaLogger.info();
+            elizaLogger.info();
+            elizaLogger.info();
+
+
+    models = {
+        [ModelProviderName.OPENAI]: {
+            endpoint: "https://api.openai.com/v1",
+            settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.0,
-            presence_penalty: 0.0,
-            temperature: 0.6,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]: settings.SMALL_OPENAI_MODEL || "gpt-4o-mini",
@@ -24,11 +50,11 @@ export const models: Models = {
         endpoint: settings.ETERNALAI_URL,
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.0,
-            presence_penalty: 0.0,
-            temperature: 0.6,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]:
@@ -47,11 +73,11 @@ export const models: Models = {
     [ModelProviderName.ANTHROPIC]: {
         settings: {
             stop: [],
-            maxInputTokens: 200000,
-            maxOutputTokens: 4096,
-            frequency_penalty: 0.4,
-            presence_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         endpoint: "https://api.anthropic.com/v1",
         model: {
@@ -63,11 +89,11 @@ export const models: Models = {
     [ModelProviderName.CLAUDE_VERTEX]: {
         settings: {
             stop: [],
-            maxInputTokens: 200000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.4,
-            presence_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         endpoint: "https://api.anthropic.com/v1", // TODO: check
         model: {
@@ -79,11 +105,11 @@ export const models: Models = {
     [ModelProviderName.GROK]: {
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.4,
-            presence_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         endpoint: "https://api.x.ai/v1",
         model: {
@@ -97,15 +123,15 @@ export const models: Models = {
         endpoint: "https://api.groq.com/openai/v1",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8000,
-            frequency_penalty: 0.4,
-            presence_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]:
-                settings.SMALL_GROQ_MODEL || "llama-3.1-8b-instant",
+                    settings.SMALL_GROQ_MODEL || "llama-3.1-8b-instant",
             [ModelClass.MEDIUM]:
                 settings.MEDIUM_GROQ_MODEL || "llama-3.3-70b-versatile",
             [ModelClass.LARGE]:
@@ -117,10 +143,10 @@ export const models: Models = {
     [ModelProviderName.LLAMACLOUD]: {
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            repetition_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            repetition_penalty: repetitionPenalty,
+            temperature: temperature,
         },
         imageSettings: {
             steps: 4,
@@ -138,10 +164,12 @@ export const models: Models = {
     [ModelProviderName.TOGETHER]: {
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            repetition_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            repetition_penalty: repetitionPenalty,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         imageSettings: {
             steps: 4,
@@ -159,10 +187,10 @@ export const models: Models = {
     [ModelProviderName.LLAMALOCAL]: {
         settings: {
             stop: ["<|eot_id|>", "<|eom_id|>"],
-            maxInputTokens: 32768,
-            maxOutputTokens: 8192,
-            repetition_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            repetition_penalty: repetitionPenalty,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]:
@@ -179,11 +207,11 @@ export const models: Models = {
     [ModelProviderName.GOOGLE]: {
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.4,
-            presence_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]:
@@ -208,11 +236,11 @@ export const models: Models = {
         endpoint: "https://api.red-pill.ai/v1",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.0,
-            presence_penalty: 0.0,
-            temperature: 0.6,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         // Available models: https://docs.red-pill.ai/get-started/supported-models
         // To test other models, change the models below
@@ -236,11 +264,11 @@ export const models: Models = {
         endpoint: "https://openrouter.ai/api/v1",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.4,
-            presence_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         // Available models: https://openrouter.ai/models
         // To test other models, change the models below
@@ -263,11 +291,11 @@ export const models: Models = {
     [ModelProviderName.OLLAMA]: {
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.4,
-            presence_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         endpoint: settings.OLLAMA_SERVER_URL || "http://localhost:11434",
         model: {
@@ -290,10 +318,10 @@ export const models: Models = {
     [ModelProviderName.HEURIST]: {
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            repetition_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            repetition_penalty: repetitionPenalty,
+            temperature: temperature,
         },
         imageSettings: {
             steps: 20,
@@ -317,11 +345,11 @@ export const models: Models = {
         endpoint: "https://api.galadriel.com/v1",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.5,
-            presence_penalty: 0.5,
-            temperature: 0.8,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]: "llama3.1:70b",
@@ -334,10 +362,10 @@ export const models: Models = {
     [ModelProviderName.FAL]: {
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            repetition_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            repetition_penalty: repetitionPenalty,
+            temperature: temperature,
         },
         imageSettings: {
             steps: 28,
@@ -354,10 +382,10 @@ export const models: Models = {
     [ModelProviderName.GAIANET]: {
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            repetition_penalty: 0.4,
-            temperature: 0.7,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            repetition_penalty: repetitionPenalty,
+            temperature: temperature,
         },
         endpoint: settings.GAIANET_SERVER_URL,
         model: {
@@ -381,11 +409,11 @@ export const models: Models = {
         endpoint: "https://dashscope.aliyuncs.com/compatible-mode/v1",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.4,
-            presence_penalty: 0.4,
-            temperature: 0.6,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]: "qwen-turbo",
@@ -398,11 +426,11 @@ export const models: Models = {
         endpoint: "https://open.volcengineapi.com/api/v3/",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.4,
-            presence_penalty: 0.4,
-            temperature: 0.6,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]: "doubao-lite-128k",
@@ -415,11 +443,11 @@ export const models: Models = {
         endpoint: "https://nano-gpt.com/api/v1",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            frequency_penalty: 0.0,
-            presence_penalty: 0.0,
-            temperature: 0.6,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            frequency_penalty: frequencyPenalty,
+            presence_penalty: presencePenalty,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]: settings.SMALL_NANOGPT_MODEL || "gpt-4o-mini",
@@ -431,9 +459,9 @@ export const models: Models = {
         endpoint: "https://api.hyperbolic.xyz/v1",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            temperature: 0.6,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]:
@@ -455,9 +483,9 @@ export const models: Models = {
         endpoint: "https://api.venice.ai/api/v1",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            temperature: 0.6,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]: settings.SMALL_VENICE_MODEL || "llama-3.3-70b",
@@ -470,9 +498,9 @@ export const models: Models = {
         endpoint: "https://chatapi.akash.network/api/v1",
         settings: {
             stop: [],
-            maxInputTokens: 128000,
-            maxOutputTokens: 8192,
-            temperature: 0.6,
+            maxInputTokens: maxInputTokens,
+            maxOutputTokens: maxOutputTokens,
+            temperature: temperature,
         },
         model: {
             [ModelClass.SMALL]:
@@ -486,7 +514,9 @@ export const models: Models = {
                 "Meta-Llama-3-1-405B-Instruct-FP8",
         },
     },
-};
+    };
+}
+
 
 export function getModel(provider: ModelProviderName, type: ModelClass) {
     return models[provider].model[type];

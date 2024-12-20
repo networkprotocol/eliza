@@ -1,14 +1,12 @@
 {
     "name": "tate",
     "clients": [],
-    "modelProvider": "together",
-    "modelClass": "small",
+    "modelProvider": "anthropic",
     "settings": {
         "secrets": {},
         "voice": {
             "model": "en_US-male-medium"
-        },
-        "model": "claude-3-5-sonnet-20241022"
+        }
     },
     "plugins": [],
     "bio": [

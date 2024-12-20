@@ -152,6 +152,12 @@ export async function generateText({
     const max_context_length = models[provider].settings.maxInputTokens;
     const max_response_length = models[provider].settings.maxOutputTokens;
 
+    elizaLogger.info("Selected temperature:", temperature);
+    elizaLogger.info("Selected frequency_penalty:", frequency_penalty);
+    elizaLogger.info("Selected presence_penalty:", presence_penalty);
+    elizaLogger.info("Selected max_context_length:", max_context_length);
+    elizaLogger.info("Selected max_response_length:", max_response_length);
+
     const apiKey = runtime.token;
 
     try {

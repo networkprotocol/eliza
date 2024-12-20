@@ -15,25 +15,11 @@ import { generateTweetActions } from "@ai16z/eliza";
 import { IImageDescriptionService, ServiceType } from "@ai16z/eliza";
 import { buildConversationThread } from "./utils.ts";
 import { twitterMessageHandlerTemplate } from "./interactions.ts";
+import { console } from "inspector";
 
-const twitterPostTemplate = `
-# Areas of Expertise
-{{knowledge}}
+const MAX_TWEET_LENGTH = 240;
+const MAX_TWEET_SENTENCES = 3;
 
-# About {{agentName}} (@{{twitterUserName}}):
-{{bio}}
-{{lore}}
-{{topics}}
-
-{{providers}}
-
-{{characterPostExamples}}
-
-{{postDirections}}
-
-# Task: Generate a post in the voice and style and perspective of {{agentName}} @{{twitterUserName}}.
-Write a 1-3 sentence post that is {{adjective}} about {{topic}} (without mentioning {{topic}} directly), from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
-Your response should not contain any questions. Brief, concise statements only. The total character count MUST be less than {{maxTweetLength}}. No emojis. Use \\n\\n (double spaces) between statements.`;
 
 export const twitterActionTemplate = `
 # INSTRUCTIONS: Determine actions for {{agentName}} (@{{twitterUserName}}) based on:
@@ -57,7 +43,6 @@ Tweet:
 # Respond with qualifying action tags only.`
     + postActionResponseFooter;
 
-const MAX_TWEET_LENGTH = 240;
 
 /**
  * Truncate text to fit within the Twitter character limit, ensuring it ends at a complete sentence.
@@ -225,12 +210,28 @@ export class TwitterPostClient {
                 }
             );
 
+            const postTemplate = getTwitterPostTemplate(this.runtime);
+
+            elizaLogger.info();
+            elizaLogger.info();
+            elizaLogger.info();
+            elizaLogger.info(postTemplate);
+
+
             const context = composeContext({
                 state,
                 template:
                     this.runtime.character.templates?.twitterPostTemplate ||
-                    twitterPostTemplate,
+                    postTemplate,
             });
+
+            elizaLogger.info();
+            elizaLogger.info();
+            elizaLogger.info();
+            elizaLogger.info(context);
+            elizaLogger.info();
+            elizaLogger.info();
+            elizaLogger.info();
 
             elizaLogger.debug("generate post prompt:\n" + context);
 
@@ -370,7 +371,7 @@ export class TwitterPostClient {
     }): Promise<string> {
         const context = composeContext({
             state: tweetState,
-            template: options?.template || this.runtime.character.templates?.twitterPostTemplate || twitterPostTemplate,
+            template: options?.template || this.runtime.character.templates?.twitterPostTemplate || getTwitterPostTemplate(this.runtime),
         });
 
         const response = await generateText({
@@ -756,4 +757,31 @@ export class TwitterPostClient {
     async stop() {
         this.stopProcessingActions = true;
     }
+}
+
+
+function getTwitterPostTemplate(runtime: IAgentRuntime ) : string{
+    const maxTweetSentences = parseInt(runtime.getSetting("MAX_TWEET_SENTENCES")) || MAX_TWEET_SENTENCES;
+    const numSentences = Math.floor(Math.random() * (maxTweetSentences)) + 1;
+
+    const twitterPostTemplate = `
+    # Areas of Expertise
+    {{knowledge}}
+
+    # About {{agentName}} (@{{twitterUserName}}):
+    {{bio}}
+    {{lore}}
+    {{topics}}
+
+    {{providers}}
+
+    {{characterPostExamples}}
+
+    {{postDirections}}
+
+    # Task: Generate a post in the voice and style and perspective of {{agentName}} @{{twitterUserName}}.
+    Write a ${numSentences} sentence post that is {{adjective}} about {{topic}} (without mentioning {{topic}} directly), from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
+    Your response should not contain any questions. Brief, concise statements only. The total character count MUST be less than {{maxTweetLength}}. No emojis. Use \\n\\n (double spaces) between statements.`;
+
+    return twitterPostTemplate;
 }
