@@ -872,9 +872,19 @@ Text: ${attachment.text}
             const shuffledLore = [...this.character.lore].sort(
                 () => Math.random() - 0.5
             );
-            const selectedLore = shuffledLore.slice(0, 10);
-            lore = selectedLore.join("\n");
+            // const selectedLore = shuffledLore.slice(0, 10);
+            lore = shuffledLore.join("\n");
         }
+
+        elizaLogger.info();
+        elizaLogger.info();
+
+        elizaLogger.info("lore length: ", this.character.lore.length);
+        elizaLogger.info("lore: ", this.character.lore);
+        elizaLogger.info("lore the agent will use: ",lore);
+
+        elizaLogger.info();
+        elizaLogger.info();
 
         const formattedCharacterPostExamples = this.character.postExamples
             .sort(() => 0.5 - Math.random())
@@ -882,12 +892,10 @@ Text: ${attachment.text}
                 const messageString = `${post}`;
                 return messageString;
             })
-            .slice(0, 50)
             .join("\n");
 
         const formattedCharacterMessageExamples = this.character.messageExamples
             .sort(() => 0.5 - Math.random())
-            .slice(0, 5)
             .map((example) => {
                 const exampleNames = Array.from({ length: 5 }, () =>
                     uniqueNamesGenerator({ dictionaries: [names] })
@@ -990,9 +998,18 @@ Text: ${attachment.text}
             // get three random bio strings and join them with " "
             bio = bio
                 .sort(() => 0.5 - Math.random())
-                .slice(0, 3)
                 .join(" ");
         }
+
+        elizaLogger.info();
+        elizaLogger.info();
+
+        elizaLogger.info("bio length: ", this.character.bio.length);
+        elizaLogger.info("bio: ", this.character.bio.length);
+        elizaLogger.info("bio the agent will use: ",bio);
+
+        elizaLogger.info();
+        elizaLogger.info();
 
         const knowledegeData = await knowledge.get(this, message);
 
