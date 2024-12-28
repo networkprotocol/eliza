@@ -872,8 +872,8 @@ Text: ${attachment.text}
             const shuffledLore = [...this.character.lore].sort(
                 () => Math.random() - 0.5
             );
-            // const selectedLore = shuffledLore.slice(0, 10);
-            lore = shuffledLore.join("\n");
+            const selectedLore = shuffledLore.slice(0, this.getSetting("LORE_LENGTH"));
+            lore = selectedLore.join("\n");
         }
 
         elizaLogger.info();
@@ -891,11 +891,12 @@ Text: ${attachment.text}
             .map((post) => {
                 const messageString = `${post}`;
                 return messageString;
-            })
+            }).slice(0, this.getSetting("POST_EXAMPLES_LENGTH"))
             .join("\n");
 
         const formattedCharacterMessageExamples = this.character.messageExamples
             .sort(() => 0.5 - Math.random())
+            .slice(0, this.getSetting("MESSAGE_EXAMPLES_LENGTH"))
             .map((example) => {
                 const exampleNames = Array.from({ length: 5 }, () =>
                     uniqueNamesGenerator({ dictionaries: [names] })
@@ -914,8 +915,7 @@ Text: ${attachment.text}
                         return messageString;
                     })
                     .join("\n");
-            })
-            .join("\n\n");
+            })            .join("\n\n");
 
         const getRecentInteractions = async (
             userA: UUID,
@@ -998,14 +998,15 @@ Text: ${attachment.text}
             // get three random bio strings and join them with " "
             bio = bio
                 .sort(() => 0.5 - Math.random())
+                .slice(0, this.getSetting("BIO_LENGTH"))
                 .join(" ");
         }
 
         elizaLogger.info();
         elizaLogger.info();
 
-        elizaLogger.info("bio length: ", this.character.bio.length);
-        elizaLogger.info("bio: ", this.character.bio.length);
+        elizaLogger.info("bio length: ", bio.length);
+        elizaLogger.info("bio: ", bio);
         elizaLogger.info("bio the agent will use: ",bio);
 
         elizaLogger.info();

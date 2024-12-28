@@ -63,19 +63,14 @@ PRIORITY RULE: ALWAYS RESPOND to these users regardless of topic or message cont
 For other users:
 - {{agentName}} should RESPOND to messages directed at them
 - {{agentName}} should RESPOND to conversations relevant to their background
-- {{agentName}} should IGNORE irrelevant messages
-- {{agentName}} should IGNORE very short messages unless directly addressed
 - {{agentName}} should STOP if asked to stop
 - {{agentName}} should STOP if conversation is concluded
-- {{agentName}} is in a room with other users and wants to be conversational, but not annoying.
 
 {{recentPosts}}
 
 IMPORTANT: For users not in the priority list, {{agentName}} (@{{twitterUserName}}) should err on the side of IGNORE rather than RESPOND if in doubt.
 
 {{recentPosts}}
-
-IMPORTANT: {{agentName}} (aka @{{twitterUserName}}) is particularly sensitive about being annoying, so if there is any doubt, it is better to IGNORE than to RESPOND.
 
 {{currentPost}}
 
@@ -113,20 +108,36 @@ export class TwitterInteractionClient {
         const targetUsersStr = this.runtime.getSetting("TWITTER_TARGET_USERS");
 
         const twitterUsername = this.client.profile.username;
+        elizaLogger.info("twitterUsername:", twitterUsername);
         try {
             // Check for mentions
-            const mentionCandidates = (
+            const mentionCandidatesNonFiltered = (
                 await this.client.fetchSearchTweets(
                     `@${twitterUsername}`,
                     20,
-                    SearchMode.Latest
+                    SearchMode.Top
                 )
             ).tweets;
 
-            elizaLogger.log(
-                "Completed checking mentioned tweets:",
-                mentionCandidates.length
-            );
+            const mentionCandidates = mentionCandidatesNonFiltered;
+            // for (let i = 0; i < mentionCandidatesNonFiltered.length; i++) {
+            //     if (
+            //         mentionCandidatesNonFiltered[i].username !=
+            //         twitterUsername
+            //     ) {
+            //         elizaLogger.info(
+            //             "mentionCandidatesNonFiltered[i]:",
+            //             mentionCandidatesNonFiltered[i]
+            //         );
+            //         mentionCandidates.push(
+            //             mentionCandidatesNonFiltered[i]
+            //         );
+            //     }
+            // }
+
+            elizaLogger.info("mentionCandidates:", mentionCandidates);
+            elizaLogger.log("Completed checking mentioned tweets:",mentionCandidates.length);
+
             let uniqueTweetCandidates = [...mentionCandidates];
             // Only process target users if configured
             if (targetUsersStr && targetUsersStr.trim()) {
@@ -220,13 +231,16 @@ export class TwitterInteractionClient {
                 );
             }
 
-            // Sort tweet candidates by ID in ascending order
-            uniqueTweetCandidates
-                .sort((a, b) => a.id.localeCompare(b.id))
-                .filter((tweet) => tweet.userId !== this.client.profile.id);
+            // // Sort tweet candidates by ID in ascending order
+            // uniqueTweetCandidates
+            //     .sort((a, b) => a.id.localeCompare(b.id))
+            //     .filter((tweet) => tweet.userId !== this.client.profile.id);
 
             // for each tweet candidate, handle the tweet
             for (const tweet of uniqueTweetCandidates) {
+
+                elizaLogger.info("unique tweet: ", tweet);
+
                 if (
                     !this.client.lastCheckedTweetId ||
                     BigInt(tweet.id) > this.client.lastCheckedTweetId
@@ -241,6 +255,8 @@ export class TwitterInteractionClient {
                         await this.runtime.messageManager.getMemoryById(
                             tweetId
                         );
+
+                    elizaLogger.info("existingResponse:", existingResponse);
 
                     if (existingResponse) {
                         elizaLogger.log(
@@ -343,6 +359,7 @@ export class TwitterInteractionClient {
             .join("\n\n");
 
         elizaLogger.debug("formattedConversation: ", formattedConversation);
+        elizaLogger.info("formattedConversation: ", formattedConversation);
 
         let state = await this.runtime.composeState(message, {
             twitterClient: this.client.twitterClient,
@@ -384,6 +401,7 @@ export class TwitterInteractionClient {
 
         // 1. Get the raw target users string from settings
         const targetUsersStr = this.runtime.getSetting("TWITTER_TARGET_USERS");
+        elizaLogger.info("targetUsersStr: ", targetUsersStr);
 
         // 2. Process the string to get valid usernames
         const validTargetUsersStr =
@@ -395,6 +413,8 @@ export class TwitterInteractionClient {
                       .join(",")
                 : "";
 
+        elizaLogger.info("validTargetUsersStr: ", validTargetUsersStr);
+
         const shouldRespondContext = composeContext({
             state,
             template:
@@ -405,15 +425,27 @@ export class TwitterInteractionClient {
                 twitterShouldRespondTemplate(validTargetUsersStr),
         });
 
-        const shouldRespond = await generateShouldRespond({
+        elizaLogger.info("shouldRespondContext: ", shouldRespondContext);
+
+        let shouldRespond = await generateShouldRespond({
             runtime: this.runtime,
             context: shouldRespondContext,
             modelClass: ModelClass.MEDIUM,
         });
 
+        elizaLogger.info("shouldRespond:", shouldRespond);
+        elizaLogger.info("shouldRespond:", shouldRespond);
+        elizaLogger.info("shouldRespond:", shouldRespond);
+        elizaLogger.info("shouldRespond:", shouldRespond);
+        elizaLogger.info("shouldRespond:", shouldRespond);
+
+        shouldRespond = "RESPOND";
+        elizaLogger.info("shouldRespond:", shouldRespond);
+        elizaLogger.info("shouldRespond:", shouldRespond);
+
         // Promise<"RESPOND" | "IGNORE" | "STOP" | null> {
         if (shouldRespond !== "RESPOND") {
-            elizaLogger.log("Not responding to message");
+            elizaLogger.info("Not responding to message");
             return { text: "Response Decision:", action: shouldRespond };
         }
 

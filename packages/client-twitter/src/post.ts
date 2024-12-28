@@ -17,7 +17,8 @@ import { buildConversationThread } from "./utils.ts";
 import { twitterMessageHandlerTemplate } from "./interactions.ts";
 import { console } from "inspector";
 
-const MAX_TWEET_LENGTH = 240;
+let MAX_TWEET_LENGTH ;
+let MIN_TWEET_LENGTH ;
 const MAX_TWEET_SENTENCES = 3;
 
 
@@ -177,6 +178,9 @@ export class TwitterPostClient {
         this.client = client;
         this.runtime = runtime;
         this.twitterUsername = runtime.getSetting("TWITTER_USERNAME");
+
+        MAX_TWEET_LENGTH = parseInt(runtime.getSetting("MAX_TWEET_LENGTH") || "280");
+        MIN_TWEET_LENGTH = parseInt(runtime.getSetting("MIN_TWEET_LENGTH") || "10");
     }
 
     private async generateNewTweet() {
@@ -216,7 +220,6 @@ export class TwitterPostClient {
             elizaLogger.info();
             elizaLogger.info();
             elizaLogger.info(postTemplate);
-
 
             const context = composeContext({
                 state,
@@ -272,7 +275,9 @@ export class TwitterPostClient {
             }
 
             // Use the helper function to truncate to complete sentence
-            const content = truncateToCompleteSentence(cleanedContent, MAX_TWEET_LENGTH);
+            // Get random length between 10 and MAX_TWEET_LENGTH
+            const randomLength = Math.floor(Math.random() * (MAX_TWEET_LENGTH - MIN_TWEET_LENGTH + 1)) + MIN_TWEET_LENGTH;
+            const content = truncateToCompleteSentence(cleanedContent, randomLength);
 
             const removeQuotes = (str: string) =>
                 str.replace(/^['"](.*)['"]$/, "$1");

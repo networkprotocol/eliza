@@ -1,3 +1,5 @@
+import fs from "fs";
+
 class ElizaLogger {
     constructor() {
         // Check if we're in Node.js environment
@@ -130,10 +132,16 @@ class ElizaLogger {
 
         if (this.isNode) {
             const c = this.#getColor(foregroundColor, backgroundColor);
-            console.log(c, processedStrings.join(""), this.#getColorReset());
+            const logMessage = `${c}${processedStrings.join("")}${this.#getColorReset()}`;
+
+            console.log(logMessage);
+            fs.appendFileSync('log.txt', logMessage + '\n');
         } else {
             const style = this.#getColor(foregroundColor, backgroundColor);
-            console.log(`%c${processedStrings.join("")}`, style);
+            const logMessage = `%c${processedStrings.join("")},${style}`;
+
+            console.log(logMessage);
+            fs.appendFileSync('log.txt', logMessage + '\n');
         }
 
         if (this.closeByNewLine) console.log("");

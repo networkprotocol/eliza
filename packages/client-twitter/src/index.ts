@@ -23,6 +23,7 @@ class TwitterManager {
           elizaLogger.warn('use at your own risk')
           this.search = new TwitterSearchClient(this.client, runtime); // don't start the search client by default
         }
+
         this.interaction = new TwitterInteractionClient(this.client, runtime);
     }
 }
@@ -45,7 +46,7 @@ export const TwitterClientInterface: Client = {
 
         await manager.interaction.start();
 
-        //await manager.search.start(); // don't run the search by default
+        // await manager.search.start(); // don't run the search by default
 
         return manager;
     },
