@@ -276,7 +276,7 @@ export class TwitterPostClient {
 
             // Use the helper function to truncate to complete sentence
             // Get random length between 10 and MAX_TWEET_LENGTH
-            const content = truncateToCompleteSentence(cleanedContent, MAX_TWEET_LENGTH);
+            // const content = truncateToCompleteSentence(cleanedContent, MAX_TWEET_LENGTH);
 
             const removeQuotes = (str: string) =>
                 str.replace(/^['"](.*)['"]$/, "$1");
@@ -285,7 +285,7 @@ export class TwitterPostClient {
                 str.replaceAll(/\\n/g, "\n");
 
             // Final cleaning
-            cleanedContent = removeQuotes(fixNewLines(content));
+            cleanedContent = removeQuotes(fixNewLines(cleanedContent));
 
             if (this.runtime.getSetting("TWITTER_DRY_RUN") === "true") {
                 elizaLogger.info(
