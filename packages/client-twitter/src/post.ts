@@ -276,8 +276,7 @@ export class TwitterPostClient {
 
             // Use the helper function to truncate to complete sentence
             // Get random length between 10 and MAX_TWEET_LENGTH
-            const randomLength = Math.floor(Math.random() * (MAX_TWEET_LENGTH - MIN_TWEET_LENGTH + 1)) + MIN_TWEET_LENGTH;
-            const content = truncateToCompleteSentence(cleanedContent, randomLength);
+            const content = truncateToCompleteSentence(cleanedContent, MAX_TWEET_LENGTH);
 
             const removeQuotes = (str: string) =>
                 str.replace(/^['"](.*)['"]$/, "$1");
@@ -768,6 +767,7 @@ export class TwitterPostClient {
 function getTwitterPostTemplate(runtime: IAgentRuntime ) : string{
     const maxTweetSentences = parseInt(runtime.getSetting("MAX_TWEET_SENTENCES")) || MAX_TWEET_SENTENCES;
     const numSentences = Math.floor(Math.random() * (maxTweetSentences)) + 1;
+    const randomLength = Math.floor(Math.random() * (MAX_TWEET_LENGTH - MIN_TWEET_LENGTH + 1)) + MIN_TWEET_LENGTH;
 
     const twitterPostTemplate = `
     # Areas of Expertise
@@ -785,7 +785,7 @@ function getTwitterPostTemplate(runtime: IAgentRuntime ) : string{
     {{postDirections}}
 
     # Task: Generate a post in the voice and style and perspective of {{agentName}} @{{twitterUserName}}.
-    Write a ${numSentences} sentence post that is {{adjective}} about {{topic}} (without mentioning {{topic}} directly), from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
+    Write a ${numSentences} sentence post with ${randomLength} characters that is {{adjective}} about {{topic}} (without mentioning {{topic}} directly), from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
     Your response should not contain any questions. Brief, concise statements only. The total character count MUST be less than {{maxTweetLength}}. No emojis. Use \\n\\n (double spaces) between statements.`;
 
     return twitterPostTemplate;
