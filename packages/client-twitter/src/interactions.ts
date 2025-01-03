@@ -415,13 +415,19 @@ export class TwitterInteractionClient {
 
         elizaLogger.info("validTargetUsersStr: ", validTargetUsersStr);
 
+        // const shouldRespondContext = composeContext({
+        //     state,
+        //     template:
+        //         this.runtime.character.templates?.twitterShouldRespondTemplate?.(
+        //             validTargetUsersStr
+        //         ) ||
+        //         this.runtime.character?.templates?.shouldRespondTemplate ||
+        //         twitterShouldRespondTemplate(validTargetUsersStr),
+        // });
+
         const shouldRespondContext = composeContext({
             state,
             template:
-                this.runtime.character.templates?.twitterShouldRespondTemplate?.(
-                    validTargetUsersStr
-                ) ||
-                this.runtime.character?.templates?.shouldRespondTemplate ||
                 twitterShouldRespondTemplate(validTargetUsersStr),
         });
 
@@ -430,7 +436,7 @@ export class TwitterInteractionClient {
         let shouldRespond = await generateShouldRespond({
             runtime: this.runtime,
             context: shouldRespondContext,
-            modelClass: ModelClass.MEDIUM,
+            modelClass: this.runtime.modelClass,
         });
 
         elizaLogger.info("shouldRespond:", shouldRespond);
@@ -463,7 +469,7 @@ export class TwitterInteractionClient {
         const response = await generateMessageResponse({
             runtime: this.runtime,
             context,
-            modelClass: ModelClass.LARGE,
+            modelClass: this.runtime.modelClass,
         });
 
         const removeQuotes = (str: string) =>
