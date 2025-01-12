@@ -545,19 +545,28 @@ export class TwitterInteractionClient {
 
 
         // // TODO: rotate this context depending on whether we want to respond game tweet or regular tweet
-        // const context = composeContext({
-        //     state,
-        //     template:
-        //         this.runtime.character.templates
-        //             ?.twitterMessageHandlerTemplate ||
-        //         this.runtime.character?.templates?.messageHandlerTemplate ||
-        //         twitterMessageHandlerTemplate,
-        // });
+
+        // Randomly choose between game context and regular context
+        const useGameContext = Math.random() < 0.7;
+        elizaLogger.info("Using game context:", useGameContext);
+
+        const context = composeContext({
+            state,
+            template:
+                this.runtime.character.templates
+                    ?.twitterMessageHandlerTemplate ||
+                this.runtime.character?.templates?.messageHandlerTemplate ||
+                twitterMessageHandlerTemplate,
+        });
 
         const gameContext = composeContext({
             state,
             template: infectionGameTemplate,
         });
+
+        // TODO: enable for production
+        const contextToUse = gameContext;
+        // const contextToUse = useGameContext ? gameContext : context;
 
 
         elizaLogger.info("");
@@ -575,7 +584,7 @@ export class TwitterInteractionClient {
 
         const response = await generateMessageResponse({
             runtime: this.runtime,
-            context: gameContext,
+            context: contextToUse,
             modelClass: this.runtime.modelClass,
         });
 
@@ -825,7 +834,6 @@ export class TwitterInteractionClient {
             immunity: false,
             accsInfected: 100,
         };
-
 
         // const gameInfo = await this.runtime.fetchGameInfo();
         // return gameInfo;
