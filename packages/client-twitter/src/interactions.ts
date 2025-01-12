@@ -9,7 +9,6 @@ import {
     HandlerCallback,
     IAgentRuntime,
     Memory,
-    ModelClass,
     State,
     stringToUuid,
     elizaLogger,
@@ -18,8 +17,54 @@ import {
 import { ClientBase } from "./base";
 import { buildConversationThread, sendTweet, wait } from "./utils.ts";
 
-export const twitterMessageHandlerTemplate =
-    `
+export const infectionGameTemplate = `
+# Areas of Expertise
+{{knowledge}}
+
+# About {{agentName}} (@{{twitterUserName}}):
+{{bio}}
+{{lore}}
+{{topics}}
+
+{{providers}}
+
+{{characterPostExamples}}
+
+{{postDirections}}
+
+Recent interactions between {{agentName}} and other users:
+{{recentPostInteractions}}
+
+{{recentPosts}}
+
+Player Profile:
+{{playerProfileBio}}
+
+Player recent posts:
+{{playerRecentPosts}}
+
+Player Stats:
+- Infection Score: {{infectionScore}}
+- Immunity Score: {{immunityScore}}
+- Infected Accounts: {{infectedAccounts}}
+
+# Task: Generate a post/reply in the voice, style and perspective of {{agentName}} (@{{twitterUserName}}) while using the thread of tweets as additional context:
+Current Post:
+{{currentPost}}
+
+Thread of Tweets You Are Replying To:
+{{formattedConversation}}
+
+{{actions}}
+# Task: Generate a post in the voice, style and perspective of {{agentName}} (@{{twitterUserName}}). You MUST include an action if the current post text includes a prompt that is similar to one of the available actions mentioned here:
+{{actionNames}}
+Here is the current post text again. Remember to include an action if the current post text includes a prompt that asks for one of the available actions mentioned above (does not need to be exact)
+{{currentPost}}
+
+Note: Higher immunity scores reduce infection success rate. If player has infection score, it means they are infected. Include amount of infected accounts in response. Also, try to include some information from user's recent posts or profile.
+` + messageCompletionFooter;
+
+export const twitterMessageHandlerTemplate =`
 # Areas of Expertise
 {{knowledge}}
 
@@ -358,16 +403,60 @@ export class TwitterInteractionClient {
             )
             .join("\n\n");
 
-        elizaLogger.debug("formattedConversation: ", formattedConversation);
-        elizaLogger.info("formattedConversation: ", formattedConversation);
+        const profile = await this.fetchProfile(tweet.username);
+        const score = await this.fetchScore(tweet.username);
+
+        let infectionScore = 0;
+        let immunityScore = 0;
+        const infectedAccounts = score.accsInfected;
+
+        const recentPostsFormated = profile.recentPosts.map((post) => {
+            return `${post.content}`;
+        }).join("\n");
+
+        if (score.immunity)
+        {
+            infectionScore = 0;
+            immunityScore = score.score;
+        }else{
+            infectionScore = score.score;
+            immunityScore = 0;
+        }
+
+        // TODO: add game info
+        const gameInfo = {
+            "playerProfileBio": profile.bio,
+            "playerRecentPosts": recentPostsFormated,
+            "infectionScore": infectionScore,
+            "immunityScore": immunityScore,
+            "infectedAccounts":infectedAccounts,
+        }
 
         let state = await this.runtime.composeState(message, {
             twitterClient: this.client.twitterClient,
             twitterUserName: this.runtime.getSetting("TWITTER_USERNAME"),
             currentPost,
             formattedConversation,
+            // "playerProfileBio": profile.bio,
+            // "playerRecentPosts": recentPostsFormated,
+            // "infectionScore": infectionScore,
+            // "immunityScore": immunityScore,
+            // "infectedAccounts":infectedAccounts,
+            ...gameInfo,
         });
 
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+
+        elizaLogger.info("agent state with game info: ", state);
+
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
         // check if the tweet exists, save if it doesn't
         const tweetId = stringToUuid(tweet.id + "-" + this.runtime.agentId);
         const tweetExists =
@@ -415,6 +504,10 @@ export class TwitterInteractionClient {
 
         elizaLogger.info("validTargetUsersStr: ", validTargetUsersStr);
 
+        // TODO: uncomment for production
+        // TODO: uncomment for production
+        // TODO: uncomment for production
+        // TODO: uncomment for production
         // const shouldRespondContext = composeContext({
         //     state,
         //     template:
@@ -440,13 +533,8 @@ export class TwitterInteractionClient {
         });
 
         elizaLogger.info("shouldRespond:", shouldRespond);
-        elizaLogger.info("shouldRespond:", shouldRespond);
-        elizaLogger.info("shouldRespond:", shouldRespond);
-        elizaLogger.info("shouldRespond:", shouldRespond);
-        elizaLogger.info("shouldRespond:", shouldRespond);
 
         shouldRespond = "RESPOND";
-        elizaLogger.info("shouldRespond:", shouldRespond);
         elizaLogger.info("shouldRespond:", shouldRespond);
 
         // Promise<"RESPOND" | "IGNORE" | "STOP" | null> {
@@ -455,22 +543,54 @@ export class TwitterInteractionClient {
             return { text: "Response Decision:", action: shouldRespond };
         }
 
-        const context = composeContext({
+
+        // // TODO: rotate this context depending on whether we want to respond game tweet or regular tweet
+        // const context = composeContext({
+        //     state,
+        //     template:
+        //         this.runtime.character.templates
+        //             ?.twitterMessageHandlerTemplate ||
+        //         this.runtime.character?.templates?.messageHandlerTemplate ||
+        //         twitterMessageHandlerTemplate,
+        // });
+
+        const gameContext = composeContext({
             state,
-            template:
-                this.runtime.character.templates
-                    ?.twitterMessageHandlerTemplate ||
-                this.runtime.character?.templates?.messageHandlerTemplate ||
-                twitterMessageHandlerTemplate,
+            template: infectionGameTemplate,
         });
 
-        elizaLogger.debug("Interactions prompt:\n" + context);
+
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+
+        elizaLogger.info("game context prompt: ", gameContext);
+
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
 
         const response = await generateMessageResponse({
             runtime: this.runtime,
-            context,
+            context: gameContext,
             modelClass: this.runtime.modelClass,
         });
+
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+
+        elizaLogger.info("game prompt response: ", response);
+
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
+        elizaLogger.info("");
 
         const removeQuotes = (str: string) =>
             str.replace(/^['"](.*)['"]$/, "$1");
@@ -666,4 +786,121 @@ export class TwitterInteractionClient {
 
         return thread;
     }
+
+    private async fetchProfile(username: string) : Promise<{
+        bio: string;
+        recentPosts: {
+            content: string;
+            url: string;
+        }[];
+    }> {
+        // TODO: fetch profile
+        return {
+            bio: "Web3 builder, trader, and investor",
+            recentPosts: [
+                {
+                    content: "I build shit",
+                    url: "https://twitter.com/hemic_",
+                },
+                {
+                    content: "Bought a lot of PENGU tokens",
+                    url: "https://twitter.com/hemic_",
+                },
+                {
+                    content: "My PENGU is up 5x, thinking about securing some",
+                    url: "https://twitter.com/hemic_",
+                },
+            ],
+        };
+    }
+
+    private async fetchScore(username: string, limit?: number, mode?: "top" | "random") : Promise<{
+        score: number;
+        immunity: boolean;
+        accsInfected: number;
+    }> {
+        // TODO: fetch game info
+        return {
+            score: 100,
+            immunity: false,
+            accsInfected: 100,
+        };
+
+
+        // const gameInfo = await this.runtime.fetchGameInfo();
+        // return gameInfo;
+    }
+
+    private async fetchTotalInfected() : Promise<number>{
+        // TODO: fetch total infected
+        return 0;
+    }
 }
+
+
+
+// description: fetches profile info
+
+// http GET /profile/@username
+// response:
+// {
+// "bio": "bio description",
+// "recentPosts": [
+// {
+//  "content":"post content",
+//  "url": "post url"
+// },
+// {
+//  "content":"post content",
+//  "url": "post url"
+// }
+// ]
+// }
+
+
+// http GET /score?username=username
+// response:
+// {
+//  "score": 100,
+//  "immunity": true, // if true, then score means 100 immunity, if false means virus score
+//  "accsInfected": 100, // number of infected accs
+// }
+
+// description: fetches random players with limit
+// http GET /score?mode=random?limit=20
+// response:
+// [
+// {
+//  "username": "@hemic_",
+//  "score": 100, // number of infected accs
+//  "immunity": true, // if true, then score means 100 immunity, if false means virus score
+// },
+// {
+//  "username": "@0xCooker",
+//  "score": 1000, // number of infected accs
+//  "immunity": true, // if true, then score means 100 immunity, if false means virus score
+// }
+// ]
+
+// description: fetches top players with limit
+// http GET /score?mode=top?limit=20
+// response:
+// [
+// {
+//  "username": "@hemic_",
+//  "score": 100, // number of infected accs
+//  "immunity": true, // if true, then score means 100 immunity, if false means virus score
+// },
+// {
+//  "username": "@0xCooker",
+//  "score": 1000, // number of infected accs
+//  "immunity": true, // if true, then score means 100 immunity, if false means virus score
+// }
+// ]
+
+// description: fetches total infected players
+// http GET /total-infected
+// response:
+// {
+//  "totalInfected": 123,
+// }

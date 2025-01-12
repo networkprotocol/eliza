@@ -35,6 +35,8 @@ tokencache/
 tweetcache/
 twitter_cookies.json
 timeline_cache.json
+characters/
+agent/log.txt
 
 *.sqlite
 

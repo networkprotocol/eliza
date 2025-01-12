@@ -909,6 +909,7 @@ export async function generateMessageResponse({
                 context,
                 modelClass,
             });
+            elizaLogger.debug("generateText response:", response);
 
             // try parsing the response as JSON, if null then try again
             const parsedContent = parseJSONObjectFromText(response) as Content;
